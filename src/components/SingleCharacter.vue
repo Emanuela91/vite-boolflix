@@ -9,7 +9,7 @@ export default {
 <template>
     <!-- card -->
     <div class="text-center">
-        <img :src="info.poster_path" :alt="info.title">
+        <img :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`" :alt="info.title">
         <h4>{{ info.title }} </h4>
         <div>{{ info.original_title }}</div>
         <div>{{ info.original_language }}</div>
