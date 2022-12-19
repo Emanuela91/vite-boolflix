@@ -1,0 +1,15 @@
+@use './partials/variables.scss' as*;
+
+// Boostrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Font esterno da fontsource
+@import 'node_modules/@fontsource/montserrat/index.css';
+@import 'node_modules/@fontsource/montserrat/700.css';
+
+
+body {
+    background-color: red;
+    color: $text-color;
+    font-family: $main-font;
+}
