@@ -3,6 +3,14 @@
 export default {
     name: "SingleCharacter",
     props: ["info"],
+
+    computed: {
+        votoArro() {
+            const voto = this.info.vote_average / 2;
+            Math.round(voto);
+            return voto;
+        }
+    }
 }
 </script>
 
@@ -16,7 +24,7 @@ export default {
             <h4>{{ info.title }} {{ info.name }} </h4>
             <div>{{ info.original_title }}</div>
             <div>{{ info.original_language }}</div>
-            <div>{{ info.vote_average }}</div>
+            <div> Voto: {{ votoArro }}</div>
         </div>
 
     </div>
