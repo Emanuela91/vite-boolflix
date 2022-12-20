@@ -20,7 +20,7 @@ export default {
       let myUrl = store.apiURL;
 
       if (store.SearchText !== "") {
-        myUrl = `https://api.themoviedb.org/3/search/movie?${store.apiKey}&query=${store.SearchText} `
+        myUrl = `https://api.themoviedb.org/3/search/multi?${store.apiKey}&query=${store.SearchText} `
       }
 
       // chiamata per far comparire i film sia per la pagina normale che per la ricerca
