@@ -2,6 +2,7 @@
 import axios from 'axios';
 import HeaderVue from './components/Header.vue';
 import CharactersListVue from './components/CharactersList.vue';
+import SearchVue from './components/Search.vue';
 
 import { store } from './store.js';
 
@@ -10,13 +11,21 @@ export default {
   components: {
     HeaderVue,
     CharactersListVue,
+    SearchVue
   },
 
   methods: {
-    getCharacters() {
+    getFilm() {
+      // metodo per fare la ricerca con apiUrl diverso
+      let myUrl = store.apiURL;
 
+      if (store.SearchText !== "") {
+        myUrl = `https://api.themoviedb.org/3/search/movie?${store.apiKey}&query=${store.SearchText} `
+      }
+
+      // chiamata per far comparire i film sia per la pagina normale che per la ricerca
       axios
-        .get(store.apiURL)
+        .get(myUrl)
         .then(res => {
           store.characterList = res.data.results;
         })
@@ -26,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    this.getCharacters();
+    this.getFilm();
   },
 
   data() {
@@ -38,7 +47,10 @@ export default {
 </script>
 
 <template>
-  <HeaderVue msg="Boolfix" />
+  <header>
+    <HeaderVue msg="Boolfix" />
+    <SearchVue @cerca="getFilm" />
+  </header>
   <main>
     <CharactersListVue />
   </main>

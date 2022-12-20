@@ -1,6 +1,13 @@
 <script>
+import { store } from '../store';
+
 export default {
     name: "Search",
+    data() {
+        return {
+            store,
+        }
+    }
 
 
 }
@@ -10,11 +17,13 @@ export default {
 
 
 <template>
-    <form>
-        <label for="search-film"></label>
-        <input type="text" id="search-film" placeholder="Cerca film o serie tv">
-        <button type="submit">Cerca</button>
-    </form>
+    <div class="container">
+        <form>
+            <label for="search-film"></label>
+            <input type="text" id="search-film" placeholder="Cerca film o serie tv" v-model="store.SearchText">
+            <button type="submit" @click.prevent="$emit('cerca')">Cerca</button>
+        </form>
+    </div>
 </template>
 
 
