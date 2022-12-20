@@ -6,8 +6,7 @@ export default {
 
     computed: {
         votoArro() {
-            const voto = this.info.vote_average / 2;
-            Math.round(voto);
+            const voto = Math.round(this.info.vote_average / 2);
             return voto;
         }
     }
