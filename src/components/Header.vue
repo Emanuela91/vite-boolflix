@@ -2,10 +2,16 @@
 
 import axios from 'axios';
 import { store } from '../store';
+import SearchVue from './Search.vue';
+
 
 export default {
     name: "Header",
     props: ["msg"],
+    components: {
+        SearchVue
+
+    },
 
     data() {
         return {
@@ -20,6 +26,8 @@ export default {
         <h1 class="text-center my-5">
             {{ msg }}
         </h1>
+        <SearchVue />
+
     </header>
 
 </template>

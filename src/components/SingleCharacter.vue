@@ -10,10 +10,15 @@ export default {
     <!-- card -->
     <div class="text-center">
         <img :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`" :alt="info.title">
-        <h4>{{ info.title }} </h4>
-        <div>{{ info.original_title }}</div>
-        <div>{{ info.original_language }}</div>
-        <div>{{ info.vote_average }}</div>
+
+        <!-- da mettere in hover -->
+        <!-- <div class="caratt">
+            <h4>{{ info.title }} </h4>
+            <div>{{ info.original_title }}</div>
+            <div>{{ info.original_language }}</div>
+            <div>{{ info.vote_average }}</div>
+        </div> -->
+
     </div>
 </template>
 
@@ -22,6 +27,8 @@ export default {
 
 .text-center {
     margin: 10px 0;
+
+
 
 }
 </style>
