@@ -61,7 +61,12 @@ export default {
             <div>{{ info.original_title }}</div>
             <!-- <div>{{ info.original_language }}</div> -->
             <img :src="getFlags">
-            <div> Voto: {{ votoArro }}</div>
+            <!-- <div> Voto: {{ votoArro }}</div> -->
+            <div class="star">
+                <span id="star" v-for="star in votoArro">
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                </span>
+            </div>
         </div>
 
     </div>
@@ -76,6 +81,12 @@ export default {
     .caratt {
         img {
             width: 20px;
+        }
+
+        .star {
+            span {
+                color: yellow;
+            }
         }
     }
 }
